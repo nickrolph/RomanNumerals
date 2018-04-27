@@ -78,8 +78,11 @@ return romNum
 
 
 }
-
+function romToDec(x){
+    return 1000
+}
 module.exports = {
-    decToRome
+    decToRome,
+    romToDec
 }
 

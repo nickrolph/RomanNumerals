@@ -1,7 +1,19 @@
 const { decToRome } = require('./index')
+const {romToDec} = require('./index')
 const equal = require('assert').deepEqual
 
 describe('', () => {
+
+//These first 5 tests were for the part 1 of the coding challenge. I started by 
+//simply identifying and returning the exact roman numerals. Then I went to 
+//print the next largest Roman Numeral value below the dec value. Then I 
+//decided to look at case where the roman numerals were some amount of 
+//multiples of the dec input. When I thought about how to print the Roman 
+//numerals that were created by putting the smaller Roman Numeral in 
+//front, I realized an easy way to do it was to solve it the same way I solved 
+//solved my first test: just add another if statement to check if the dec falls
+//in that range. For the last and most complicated test I found that if i 
+//
 
 //test wave 1 for 1
     it('', () => { // Test if 1 return I
@@ -37,6 +49,7 @@ describe('', () => {
 
 //test wave 4 returns Roman Numeral n times wher n = the max times 
 //nearest Roman Numeral value below divides dec number
+//This is only necesary in the cases 1,10,100, and 1000
 	it('', () => { // Test if 3000 return MMM
 	equal(decToRome(3000),"MMM")}) 
 
@@ -92,21 +105,17 @@ describe('', () => {
 	equal(decToRome(742),"DCCXLII")}) 
 
 
+//For these next round of tests for part 2 I am using some information I 
+//learned from part 1 to come with a different approach. I know
+//that Roman Numerals are read from left to right in decreaseing order
+//of value. With this in mind I will structure my tests in decending order
+//from the outset unlike in part 1
+
+//first test if we can take input and return 1000
+    it('', () => { // Test if M return 1000
+	equal(romToDec("M"), 1000)}) 
 
 
-
-
-
-
-
-
-
- 
-
-
-
-
- 
 
 
 })
