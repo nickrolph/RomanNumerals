@@ -153,6 +153,28 @@ describe('', () => {
     it('', () => { // Test if 8 return M
 	equal(romToDec("CCCC"),400)}) 
 
+//Fifth wave tests, Testing with Any roman numeral to see if it can parse it correctly
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("MMDCCCLVI"),2856)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("XIX"),19)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("XLIX"),49)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("CMXLIX"),949)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("MDCCLVIII"),1758)}) 
+
+
 
 
 
