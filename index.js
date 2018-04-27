@@ -29,7 +29,8 @@ function romToDec(x){
     //array of possible Numerals
     var posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
     
-    while(x.length >0){
+    while(x.length > 0){
+ /*
         //check the conents of the first letter and compare to second letter
         firstLet = x.substring(0,1)
         secLet = x.substring(1,2)
@@ -46,61 +47,29 @@ function romToDec(x){
         else{
             lets = firstLet
         }
-
+*/
         //this loop checks each possible Numeral and adds the value based
         //off the first letter(s)
         for(var i = 0;i <posNum.length;i++){
-            if(lets === posNum[i]){
+            //checks if posNum[i] is in x and if it is at the begenning of
+            //the string
+            console.log("WELL x is ", x)
+
+            console.log("The value of the loop is "+ i + " and the value of posNum[i] is ", posNum[i])
+            console.log("Hey there champ the value of the indexOf is ", x.indexOf(posNum[i]))
+
+            if(x.indexOf(posNum[i]) === 0){
+                //if it is we add the decimal value
                 decVal = decVal + posDec[i]
             }
-        }
-       
-/*
-        if(lets === "M"){
-            decVal = decVal + 1000
-        }
-        if(lets === "CM"){
-            decVal = decVal + 900
-        }
-        if(lets === "D"){
-            decVal=decVal+ 500
-        }
-        if(lets=== "CD"){
-            decVal=decVal+ 400 
-        }
-        if(lets==="C"){
-            decVal=decVal+ 100
-        }
-        if(lets==="XC"){
-            decVal=decVal+ 90
-        }
-        if(lets==="L"){
-            decVal=decVal+ 50
-        }
-        if(lets==="XL"){
-            decVal = decVal+40     
-        }
-        if(lets==="X"){
-            decVal=decVal+ 10
-        }
-        if(lets==="IX"){
-            decVal=decVal+ 9
-        }
-        if(lets==="V"){
-            decVal=decVal+ 5
-        }
-        if(lets==="IV"){
-            decVal=decVal+ 4
-        }
-        if(lets==="I"){
-            decVal=decVal+ 1
-        }
-        */
-        x = x.substring(lets.length,)
+        console.log("WELL x is ", x)
+        //we then make x the same string without that first numeral(s)
+        x = x.substring(posNum[i].length,)
+        } 
     }
     return decVal
-
 }
+
 module.exports = {
     decToRome,
     romToDec
