@@ -1,67 +1,80 @@
 function decToRome(x) {
     romNum = ""
 	if(x >= 1000){
+        thous = Math.floor(x/1000)
         //for loop runs as many times as 1000 divides x
-        for(var i = 0; i < Math.floor((x/1000)); i++){
+        for(var i = 0; i < thous; i++){
             //append a new M for each loop
             romNum = romNum + "M"
         }
-		return romNum
+        x = x - thous
 	}
     if(x>=900){
-        return "CM"
+        //return 900
+        x = x - 900
+        romNum = romNum + "CM"
     }
 	if(x >= 500){
-		return "D"
+        x = x-500
+		romNum = romNum + "D"
 	}
     if(x>= 400){
-        return "CD"
+        x = x - 400
+        romNum = romNum + "CD"
     }
 	if(x >= 100){
+        hund = Math.floor(x/100)
         //for loop runs as many times as 100 divides x
-        for(var i = 0; i < Math.floor((x/100)); i++){
+        for(var i = 0; i < hund; i++){
             //append C for each loop
             romNum = romNum + "C"
 
         }
-		return romNum
+        x = x - hund
 	}
     if(x>=90){
-        return "XC"
+        x = x - 90
+        romNum = romNum + "XC"
     }
 	if(x >= 50){
-		return "L"
+        x = x - 50
+		romNum = romNum + "L"
 	}
     if(x>=40){
-        return "XL"
+        x = x - 40
+        romNum = romNum + "XL"
     }
 	if(x >= 10){
+        ten = Math.floor(x/10)
         //for loopo runs as many times as 10 divides x
-        for(var i = 0; i < Math.floor((x/10)); i++){
+        for(var i = 0; i < ten; i++){
             //append X for each loop
             romNum = romNum + "X"
         }
-		return romNum
+		x = x - ten
 	}
     if(x >=9){
-        return "IX"
+        x = x - 9
+        romNum = romNum + "IX"
     }
 	if(x >= 5){
-		return "V"
+        x = x-5
+		romNum = romNum + "V"
 	}
     if(x>= 4){
-        return "IV"
+        x = x-4
+        romNum = romNum + "IV"
     }
 	if(x >= 1){
         //for loop runs as many times as 1 divides x
-        for(var i = 0; i < Math.floor((x/1)); i++){
+        for(var i = 0; i < x; i++){
             //append I for each loop
             romNum = romNum + "I"
         }
-		return romNum
+		x = x -x
 	}
 
-return "Not a Valid input"
+return romNum
 
 
 }

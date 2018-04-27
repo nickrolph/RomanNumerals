@@ -74,6 +74,27 @@ describe('', () => {
     it('', () => { // Test if 4 return IV
 	equal(decToRome(4),"IV")}) 
 
+//test to append multiple values of roman numerals together to acound for
+//the complete number
+    it('', () => { // Test if 8 return M
+	equal(decToRome(2945),"V")}) 
+
+    it('', () => { // Test if 8 return M
+	equal(decToRome(197),"V")}) 
+
+    it('', () => { // Test if 8 return M
+	equal(decToRome(83),"V")}) 
+
+    it('', () => { // Test if 8 return M
+	equal(decToRome(17),"V")}) 
+
+    it('', () => { // Test if 8 return M
+	equal(decToRome(742),"V")}) 
+
+
+
+
+
 
 
 
