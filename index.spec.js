@@ -30,10 +30,10 @@ describe('', () => {
 	equal(decToRome(200),"CC")}) 
 	it('', () => { // Test if 540 return D
 	equal(decToRome(540),"D")}) 
-	it('', () => { // Test if 9 return V
-	equal(decToRome(9),"V")}) 
-	it('', () => { // Test if 4 return I - now IIII
-	equal(decToRome(4),"IIII")}) 
+	it('', () => { // Test if 9 return V - now IX
+	equal(decToRome(9),"IX")}) 
+	it('', () => { // Test if 4 return I - now IV
+	equal(decToRome(4),"IV")}) 
 
 //test wave 4 returns Roman Numeral n times wher n = the max times 
 //nearest Roman Numeral value below divides dec number
@@ -49,14 +49,31 @@ describe('', () => {
     it('', () => { // Test if 200 return CC
 	equal(decToRome(200),"CC")}) 
     
-    it('', () => { // Test if 40 returns XXXX
-	equal(decToRome(40),"XXXX")}) 
+    it('', () => { // Test if 40 returns XXXX - now XL
+	equal(decToRome(40),"XL")}) 
 
     it('', () => { // Test if 3 return III
 	equal(decToRome(3),"III")}) 
 
     it('', () => { // Test if 8 return M
 	equal(decToRome(8),"V")}) 
+
+
+//test wave 5 to account for values one tick below roman Numeral value 
+//ex. 40 is XL, 90 is XC etc
+
+    it('', () => { // Test if 900 returns CM
+	equal(decToRome(900),"CM")}) 
+
+    it('', () => { // Test if 90 return XC
+	equal(decToRome(90),"XC")}) 
+
+    it('', () => { // Test if 400 returns CD
+	equal(decToRome(400),"CD")}) 
+
+    it('', () => { // Test if 4 return IV
+	equal(decToRome(4),"IV")}) 
+
 
 
 
