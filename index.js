@@ -5,16 +5,18 @@ function decToRome(x) {
     var posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
     //the final roman Numeral to be returned
     var romNum = ""
-	//this for loop takes loops through each value of posDec so I don't
+	//this for loop loops through each value of posDec so I don't
     //need an if statement for each
     for(var i = 0; i < posDec.length; i++){
-        //this creates the base so we can deck if x is a multiple of a numeral
+        //this creates the base so we can check if x is a multiple of a 
+        //numeral's decimal value
         var base = Math.floor((x/posDec[i]))
         //loops as many times as the base divides x
         for(var j = 0; j < base;j++){
             //appends the roman numeral for each time
             romNum = romNum + posNum[i]
         }
+        //subtracting the value we already turned into a Roman Numeral
         x = x - (base * posDec[i])
     }
 return romNum

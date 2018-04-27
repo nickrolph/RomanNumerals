@@ -4,17 +4,6 @@ const equal = require('assert').deepEqual
 
 describe('', () => {
 //----------------------------Part 1----------------------------------------
-//These first 5 tests were for the part 1 of the coding challenge. I started by 
-//simply identifying and returning the exact roman numerals. Then I went to 
-//print the next largest Roman Numeral value below the dec value. Then I 
-//decided to look at case where the roman numerals were some amount of 
-//multiples of the dec input. When I thought about how to print the Roman 
-//numerals that were created by putting the smaller Roman Numeral in 
-//front, I realized an easy way to do it was to solve it the same way I solved 
-//solved my first test: just add another if statement to check if the dec falls
-//in that range. For the last and most complicated test I found that if i 
-//subtracted the roman numeral for that place, I got a new int that I could 
-//once again repeat the process on
 
 //test wave 1 for 1
     it('', () => { // Test if 1 return I
@@ -51,6 +40,7 @@ describe('', () => {
 //test wave 4 returns Roman Numeral n times wher n = the max times 
 //nearest Roman Numeral value below divides dec number
 //This is only necesary in the cases 1,10,100, and 1000
+//
 	it('', () => { // Test if 3000 return MMM
 	equal(decToRome(3000),"MMM")}) 
 
@@ -73,8 +63,8 @@ describe('', () => {
 	equal(decToRome(8),"VIII")}) 
 
 
-//test wave 5 to account for values one tick below roman Numeral value 
-//ex. 40 is XL, 90 is XC etc
+//test wave 5 to account for values with first numeral one-two 
+//ticks below roman numeral value ex. 40 is XL, 90 is XC etc
 
     it('', () => { // Test if 900 returns CM
 	equal(decToRome(900),"CM")}) 
@@ -88,8 +78,9 @@ describe('', () => {
     it('', () => { // Test if 4 return IV
 	equal(decToRome(4),"IV")}) 
 
-//test wave 6 to append multiple values of roman numerals together to acound for
+//test wave 6 to append multiple roman numerals together to create
 //the complete number
+
     it('', () => { // Test if 2945 return MMCMXLV
 	equal(decToRome(2945),"MMCMXLV")}) 
 
@@ -110,17 +101,12 @@ describe('', () => {
 
 
 //-----------------------PART 2-----------------------------------
-//For these next round of tests for part 2 I am using some information I 
-//learned from part 1 to come with a different approach. I know
-//that Roman Numerals are read from left to right in decreaseing order
-//of value. With this in mind I will structure my program value checking
-//in decending order from the outset unlike in part 1
 
 //first test if we can take input and return 1000
     it('', () => { // Test if M return 1000
 	equal(romToDec("M"), 1000)}) 
 
-//second wave tests given single Roman Numeral return proper char
+//second wave tests given single Roman Numeral return proper decimal
     it('', () => { // Test if D return 500
 	equal(romToDec("D"),500)}) 
 
@@ -128,8 +114,8 @@ describe('', () => {
     it('', () => { // Test if C return 100
 	equal(romToDec("C"),100)}) 
 
-//third wave tests, if given two digit roman Numeral with first digit < 
-//second digit
+//third wave tests, if given two digit roman Numeral with first digit less than
+//second digit and a valid combination
 
 
     it('', () => { // Test if CM return 900
@@ -158,36 +144,37 @@ describe('', () => {
     it('', () => { // Test if CCCC return 400
 	equal(romToDec("CCCC"),400)}) 
 
-//Fifth wave tests, Testing with Any roman numeral to see if it can parse it correctly
+//Fifth wave tests, Testing with random and more complex roman numerals to 
+//see if it can parse it correctly
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if MMDCCCLVI return 2856
 	equal(romToDec("MMDCCCLVI"),2856)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if XIX return 19
 	equal(romToDec("XIX"),19)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if XLIX return 49
 	equal(romToDec("XLIX"),49)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if CMXLIX return 949
 	equal(romToDec("CMXLIX"),949)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if MDCCLVIII return 1758
 	equal(romToDec("MDCCLVIII"),1758)}) 
 
 
 
 //possible edge cases or known error cases:
 //if Numerals are ever in an invalid order ex XM, IM
-//Some numerals cannot be set up as doubles in certain context's ex CC
-//if more than 3 Numerals in a row ex CCCC 
+//Some numerals cannot be set up as doubles in certain situations. ex: LL
+//if more than 3 Numerals in a row. ex: XXXX 
 
 
 
-//with regard to errors I am trusting the user to input a valid Roman 
-//Numeral and for the user to not try and convert 0
+//with regard to these errors I am trusting the user to input a valid Roman 
+//Numeral and for the user to not try and convert 0 to a Numeral
 })
