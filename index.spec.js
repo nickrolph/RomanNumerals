@@ -3,7 +3,7 @@ const {romToDec} = require('./index')
 const equal = require('assert').deepEqual
 
 describe('', () => {
-
+//----------------------------Part 1----------------------------------------
 //These first 5 tests were for the part 1 of the coding challenge. I started by 
 //simply identifying and returning the exact roman numerals. Then I went to 
 //print the next largest Roman Numeral value below the dec value. Then I 
@@ -13,7 +13,8 @@ describe('', () => {
 //front, I realized an easy way to do it was to solve it the same way I solved 
 //solved my first test: just add another if statement to check if the dec falls
 //in that range. For the last and most complicated test I found that if i 
-//
+//subtracted the roman numeral for that place, I got a new int that I could 
+//once again repeat the process on
 
 //test wave 1 for 1
     it('', () => { // Test if 1 return I
@@ -87,70 +88,74 @@ describe('', () => {
     it('', () => { // Test if 4 return IV
 	equal(decToRome(4),"IV")}) 
 
-//test to append multiple values of roman numerals together to acound for
+//test wave 6 to append multiple values of roman numerals together to acound for
 //the complete number
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if 2945 return MMCMXLV
 	equal(decToRome(2945),"MMCMXLV")}) 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if 197 return CXCVII
 	equal(decToRome(197),"CXCVII")}) 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if 83 return LXXXIII
 	equal(decToRome(83),"LXXXIII")}) 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if 17 return XVII
 	equal(decToRome(17),"XVII")}) 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if 742 return DCCXLII
 	equal(decToRome(742),"DCCXLII")}) 
 
+//possible edge cases or known error cases:
+//if dec = 0
 
+
+//-----------------------PART 2-----------------------------------
 //For these next round of tests for part 2 I am using some information I 
 //learned from part 1 to come with a different approach. I know
 //that Roman Numerals are read from left to right in decreaseing order
-//of value. With this in mind I will structure my tests in decending order
-//from the outset unlike in part 1
+//of value. With this in mind I will structure my program value checking
+//in decending order from the outset unlike in part 1
 
 //first test if we can take input and return 1000
     it('', () => { // Test if M return 1000
 	equal(romToDec("M"), 1000)}) 
 
 //second wave tests given single Roman Numeral return proper char
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if D return 500
 	equal(romToDec("D"),500)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if C return 100
 	equal(romToDec("C"),100)}) 
 
 //third wave tests, if given two digit roman Numeral with first digit < 
 //second digit
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if CM return 900
 	equal(romToDec("CM"),900)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if XC return 90
 	equal(romToDec("XC"),90)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if IX returns 9
 	equal(romToDec("IX"),9)}) 
 
 //Fourth wave tests, if given a Multiple of any duplicatable Roman Numeral
 //Give the proper numerical value. 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if it returns 30
 	equal(romToDec("XXX"),30)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if II return 2
 	equal(romToDec("II"),2)}) 
 
 
-    it('', () => { // Test if 8 return M
+    it('', () => { // Test if CCCC return 400
 	equal(romToDec("CCCC"),400)}) 
 
 //Fifth wave tests, Testing with Any roman numeral to see if it can parse it correctly
@@ -176,8 +181,13 @@ describe('', () => {
 
 
 
+//possible edge cases or known error cases:
+//if Numerals are ever in an invalid order ex XM, IM
+//Some numerals cannot be set up as doubles in certain context's ex CC
+//if more than 3 Numerals in a row ex CCCC 
 
 
 
-
+//with regard to errors I am trusting the user to input a valid Roman 
+//Numeral and for the user to not try and convert 0
 })
