@@ -138,6 +138,21 @@ describe('', () => {
     it('', () => { // Test if 8 return M
 	equal(romToDec("IX"),9)}) 
 
+//Fourth wave tests, if given a Multiple of any duplicatable Roman Numeral
+//Give the proper numerical value. 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("XXX"),30)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("II"),2)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("CCCC"),9)}) 
+
 
 
 
