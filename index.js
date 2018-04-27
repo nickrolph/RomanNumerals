@@ -80,48 +80,61 @@ return romNum
 function romToDec(x){
     decVal = 0
     while(x.length >0){
-        //check the conents of the first letter
+        //check the conents of the first letter and compare to second letter
+        
         firstLet = x.substring(0,1)
-        if(firstLet === "M"){
+        secLet = x.substring(1,2)
+        lets = ""
+
+        if((firstLet == "I" && (secLet == "V" || secLet == "X"))
+            ||(firstLet == "X" && (secLet == "L" || secLet == "C"))
+            ||(firstLet == "C" && (secLet == "D" || secLet == "M"))
+            ){
+            lets = x.substring(0,2)
+        }
+        else{
+            lets = firstLet
+        }
+        if(lets === "M"){
             decVal = decVal + 1000
         }
-        if(firstLet === "CM"){
+        if(lets === "CM"){
             decVal = decVal + 900
         }
-        if(firstLet === "D"){
+        if(lets === "D"){
             decVal=decVal+ 500
         }
-        if(firstLet=== "CD"){
+        if(lets=== "CD"){
             decVal=decVal+ 400 
         }
-        if(firstLet==="C"){
+        if(lets==="C"){
             decVal=decVal+ 100
         }
-        if(firstLet==="XC"){
+        if(lets==="XC"){
             decVal=decVal+ 90
         }
-        if(firstLet==="L"){
+        if(lets==="L"){
             decVal=decVal+ 50
         }
-        if(firstLet==="XL"){
+        if(lets==="XL"){
             decVal = decVal+40     
         }
-        if(firstLet==="X"){
+        if(lets==="X"){
             decVal=decVal+ 10
         }
-        if(firstLet==="IX"){
+        if(lets==="IX"){
             decVal=decVal+ 9
         }
-        if(firstLet==="V"){
+        if(lets==="V"){
             decVal=decVal+ 5
         }
-        if(firstLet==="IV"){
+        if(lets==="IV"){
             decVal=decVal+ 4
         }
-        if(firstLet==="I"){
+        if(lets==="I"){
             decVal=decVal+ 1
         }
-        x = x.substring(1,)
+        x = x.substring(lets.length,)
     }
     return decVal
 
