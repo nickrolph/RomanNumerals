@@ -1,8 +1,7 @@
-const { foo } = require('./index')
+const { decToRome } = require('./index')
 const equal = require('assert').deepEqual
 
 describe('', () => {
-    it('', () => {
-        equal(foo(), true)
-    })
+    it('', () => { // Test if 1 return I
+	equal(decToRome(1),"I")}) 
 })
