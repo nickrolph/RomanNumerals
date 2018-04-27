@@ -115,6 +115,31 @@ describe('', () => {
     it('', () => { // Test if M return 1000
 	equal(romToDec("M"), 1000)}) 
 
+//second wave tests given single Roman Numeral return proper char
+    it('', () => { // Test if 8 return M
+	equal(romToDec("D"),500)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("C"),100)}) 
+
+//third wave tests, if given two digit roman Numeral with first digit < 
+//second digit
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("CM"),900)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("XC"),90)}) 
+
+
+    it('', () => { // Test if 8 return M
+	equal(romToDec("IX"),9)}) 
+
+
+
 
 
 

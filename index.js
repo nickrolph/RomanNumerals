@@ -73,13 +73,50 @@ function decToRome(x) {
         }
 		x = x -x
 	}
-
 return romNum
-
-
 }
+
+
 function romToDec(x){
-    return 1000
+    if(x === "M"){
+        return 1000
+    }
+    if(x === "CM"){
+        return 900
+    }
+    if(x === "D"){
+        return 500
+    }
+    if(x=== "CD"){
+        return 400 
+    }
+    if(x==="C"){
+        return 100
+    }
+    if(x==="XC"){
+        return 90
+    }
+    if(x==="L"){
+        return 50
+    }
+    if(x==="XL"){
+    
+    }
+    if(x==="X"){
+        return 10
+    }
+    if(x==="IX"){
+        return 9
+    }
+    if(x==="V"){
+        return 5
+    }
+    if(x==="IV"){
+        return 4
+    }
+    if(x==="I"){
+        return 1
+    }
 }
 module.exports = {
     decToRome,
