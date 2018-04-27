@@ -7,7 +7,7 @@ function decToRome(x) {
             //append a new M for each loop
             romNum = romNum + "M"
         }
-        x = x - thous
+        x = x - (thous * 1000)
 	}
     if(x>=900){
         //return 900
@@ -30,7 +30,7 @@ function decToRome(x) {
             romNum = romNum + "C"
 
         }
-        x = x - hund
+        x = x - (hund * 100)
 	}
     if(x>=90){
         x = x - 90
@@ -51,7 +51,7 @@ function decToRome(x) {
             //append X for each loop
             romNum = romNum + "X"
         }
-		x = x - ten
+		x = x - (ten * 10)
 	}
     if(x >=9){
         x = x - 9

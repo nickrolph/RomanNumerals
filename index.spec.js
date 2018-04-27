@@ -28,8 +28,8 @@ describe('', () => {
 	equal(decToRome(3000),"MMM")}) 
 	it('', () => { // Test if 200 return C - now CC
 	equal(decToRome(200),"CC")}) 
-	it('', () => { // Test if 540 return D
-	equal(decToRome(540),"D")}) 
+	it('', () => { // Test if 540 return D - now DXL
+	equal(decToRome(540),"DXL")}) 
 	it('', () => { // Test if 9 return V - now IX
 	equal(decToRome(9),"IX")}) 
 	it('', () => { // Test if 4 return I - now IV
@@ -55,8 +55,8 @@ describe('', () => {
     it('', () => { // Test if 3 return III
 	equal(decToRome(3),"III")}) 
 
-    it('', () => { // Test if 8 return M
-	equal(decToRome(8),"V")}) 
+    it('', () => { // Test if 8 return M - now VIII
+	equal(decToRome(8),"VIII")}) 
 
 
 //test wave 5 to account for values one tick below roman Numeral value 
@@ -77,19 +77,19 @@ describe('', () => {
 //test to append multiple values of roman numerals together to acound for
 //the complete number
     it('', () => { // Test if 8 return M
-	equal(decToRome(2945),"V")}) 
+	equal(decToRome(2945),"MMCMXLV")}) 
 
     it('', () => { // Test if 8 return M
-	equal(decToRome(197),"V")}) 
+	equal(decToRome(197),"CXCVII")}) 
 
     it('', () => { // Test if 8 return M
-	equal(decToRome(83),"V")}) 
+	equal(decToRome(83),"LXXXIII")}) 
 
     it('', () => { // Test if 8 return M
-	equal(decToRome(17),"V")}) 
+	equal(decToRome(17),"XVII")}) 
 
     it('', () => { // Test if 8 return M
-	equal(decToRome(742),"V")}) 
+	equal(decToRome(742),"DCCXLII")}) 
 
 
 
