@@ -1,71 +1,84 @@
 function decToRome(x) {
+    //array of possible decimal values
+    posDec = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+    //array of possible Numerals
+    posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+    //the final roman Numeral to be returned
     romNum = ""
-	if(x >= 1000){
-        thous = Math.floor(x/1000)
+	if(x >= posDec[0]){
+        thous = Math.floor(x/posDec[0])
         //for loop runs as many times as 1000 divides x
         for(var i = 0; i < thous; i++){
             //append a new M for each loop
             romNum = romNum + "M"
         }
-        x = x - (thous * 1000)
+        x = x - (thous * posDec[0])
 	}
-    if(x>=900){
-        //return 900
-        x = x - 900
+    if(x>= posDec[1]){
+        //add 900
+        x = x - posDec[1]
         romNum = romNum + "CM"
     }
-	if(x >= 500){
-        x = x-500
+	if(x >= posDec[2]){
+        //add 500
+        x = x- posDec[2]
 		romNum = romNum + "D"
 	}
-    if(x>= 400){
-        x = x - 400
+    if(x>= posDec[3]){
+        //add 400
+        x = x - posDec[3]
         romNum = romNum + "CD"
     }
-	if(x >= 100){
-        hund = Math.floor(x/100)
+	if(x >=  posDec[4]){
+        hund = Math.floor(x/ posDec[4])
         //for loop runs as many times as 100 divides x
         for(var i = 0; i < hund; i++){
             //append C for each loop
             romNum = romNum + "C"
 
         }
-        x = x - (hund * 100)
+        x = x - (hund *  posDec[4])
 	}
-    if(x>=90){
-        x = x - 90
+    if(x>= posDec[5]){
+        //add 90 
+        x = x - posDec[5]
         romNum = romNum + "XC"
     }
-	if(x >= 50){
+	if(x >= posDec[6]){
+        //add 50
         x = x - 50
 		romNum = romNum + "L"
 	}
-    if(x>=40){
-        x = x - 40
+    if(x>= posDec[7]){
+        //add 40
+        x = x - posDec[7]
         romNum = romNum + "XL"
     }
-	if(x >= 10){
-        ten = Math.floor(x/10)
+	if(x >= posDec[8]){
+        ten = Math.floor(x/ posDec[8])
         //for loopo runs as many times as 10 divides x
         for(var i = 0; i < ten; i++){
             //append X for each loop
             romNum = romNum + "X"
         }
-		x = x - (ten * 10)
+		x = x - (ten * posDec[8])
 	}
-    if(x >=9){
-        x = x - 9
+    if(x >= posDec[9]){
+        //add 9
+        x = x - posDec[9]
         romNum = romNum + "IX"
     }
-	if(x >= 5){
-        x = x-5
+	if(x >= posDec[10]){
+        //add 5
+        x = x- posDec[10]
 		romNum = romNum + "V"
 	}
-    if(x>= 4){
-        x = x-4
+    if(x>=  posDec[11]){
+        //add 4
+        x = x - posDec[11]
         romNum = romNum + "IV"
     }
-	if(x >= 1){
+	if(x >=  posDec[12]){
         //for loop runs as many times as 1 divides x
         for(var i = 0; i < x; i++){
             //append I for each loop
@@ -78,7 +91,13 @@ return romNum
 
 
 function romToDec(x){
+    //the final decimal value to be returned
     decVal = 0
+    //array of possible decimal values
+    posDec = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+    //array of possible Numerals
+    posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+    
     while(x.length >0){
         //check the conents of the first letter and compare to second letter
         
