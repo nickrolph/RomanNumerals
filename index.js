@@ -1,11 +1,25 @@
 function decToRome(x) {
     //array of possible decimal values
-    posDec = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+    var posDec = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
     //array of possible Numerals
-    posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+    var posNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
     //the final roman Numeral to be returned
-    romNum = ""
-	if(x >= posDec[0]){
+    var romNum = ""
+	//this for loop takes loops through each value of posDec so I don't
+    //need an if statement for each
+    for(var i = 0; i < posDec.length; i++){
+        //this creates the base so we can deck if x is a multiple of a numeral
+        var base = Math.floor((x/posDec[i]))
+        console.log("the value of base on loop " + i + " is ", base)
+        //loops as many times as the base divides x
+        for(var j = 0; j < base;j++){
+            //appends the roman numeral for each time
+            romNum = romNum + posNum[i]
+        }
+        x = x - (base * posNum[i])
+    }
+/*    
+    if(x >= posDec[0]){
         thous = Math.floor(x/posDec[0])
         //for loop runs as many times as 1000 divides x
         for(var i = 0; i < thous; i++){
@@ -86,6 +100,7 @@ function decToRome(x) {
         }
 		x = x -x
 	}
+*/    
 return romNum
 }
 
