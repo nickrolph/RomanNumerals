@@ -78,50 +78,52 @@ return romNum
 
 
 function romToDec(x){
-    //parse string to check if has duplicate letters
+    decVal = 0
     while(x.length >0){
+        //check the conents of the first letter
         firstLet = x.substring(0,1)
         if(firstLet === "M"){
-            return 1000
+            decVal = decVal + 1000
         }
         if(firstLet === "CM"){
-            return 900
+            decVal = decVal + 900
         }
         if(firstLet === "D"){
-            return 500
+            decVal=decVal+ 500
         }
         if(firstLet=== "CD"){
-            return 400 
+            decVal=decVal+ 400 
         }
         if(firstLet==="C"){
-            return 100
+            decVal=decVal+ 100
         }
         if(firstLet==="XC"){
-            return 90
+            decVal=decVal+ 90
         }
         if(firstLet==="L"){
-            return 50
+            decVal=decVal+ 50
         }
         if(firstLet==="XL"){
-        
+            decVal = decVal+40     
         }
         if(firstLet==="X"){
-            return 10
+            decVal=decVal+ 10
         }
         if(firstLet==="IX"){
-            return 9
+            decVal=decVal+ 9
         }
         if(firstLet==="V"){
-            return 5
+            decVal=decVal+ 5
         }
         if(firstLet==="IV"){
-            return 4
+            decVal=decVal+ 4
         }
         if(firstLet==="I"){
-            return 1
+            decVal=decVal+ 1
         }
         x = x.substring(1,)
     }
+    return decVal
 
 }
 module.exports = {

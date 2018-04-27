@@ -151,7 +151,7 @@ describe('', () => {
 
 
     it('', () => { // Test if 8 return M
-	equal(romToDec("CCCC"),9)}) 
+	equal(romToDec("CCCC"),400)}) 
 
 
 
