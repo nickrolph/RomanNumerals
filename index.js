@@ -10,13 +10,12 @@ function decToRome(x) {
     for(var i = 0; i < posDec.length; i++){
         //this creates the base so we can deck if x is a multiple of a numeral
         var base = Math.floor((x/posDec[i]))
-        console.log("the value of base on loop " + i + " is ", base)
         //loops as many times as the base divides x
         for(var j = 0; j < base;j++){
             //appends the roman numeral for each time
             romNum = romNum + posNum[i]
         }
-        x = x - (base * posNum[i])
+        x = x - (base * posDec[i])
     }
 /*    
     if(x >= posDec[0]){
